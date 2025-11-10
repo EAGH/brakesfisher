@@ -52,7 +52,7 @@ export default function Home() {
             {/* Text Content */}
             <div className="space-y-6">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                {COMPANY_NAME}
+                <span className="title">{COMPANY_NAME}</span>
               </h1>
               <p className="text-xl md:text-2xl text-primary-foreground/90">
                 Especialistas en Frenos y Embragues

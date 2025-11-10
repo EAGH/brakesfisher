@@ -43,6 +43,9 @@
 }
 
 :root {
+  --ball-size: 42;
+  --pi: 3.14159265;
+  --impect-radius: 192;
   --primary: oklch(0.25 0.08 260);
   --primary-foreground: oklch(0.98 0 0);
   --sidebar-primary: oklch(0.25 0.08 260);
@@ -203,5 +206,17 @@
 
   .card-service {
     @apply bg-card text-card-foreground p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-border;
+  }
+
+  .title {
+    background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.199) 0%,
+      rgba(255, 255, 255, 1) 100%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+  color: transparent;
+  background-size: 300%;
   }
 }
