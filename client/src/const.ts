@@ -38,7 +38,7 @@ export const SERVICES = [
   {
     id: "master",
     title: "Reparación de Master y Bombas",
-    description: "Servicio especializado en reparación y mantenimiento de cilindros maestros y bombas de freno.",
+    description: "Servicio especializado en mantenimiento y reparación de bombas Y MASTER.",
     icon: "Cog"
   }
 ];
