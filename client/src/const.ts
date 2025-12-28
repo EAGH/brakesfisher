@@ -20,7 +20,7 @@ export const SERVICES = [
   {
     id: "rectificacion",
     title: "Rectificación de Discos y Tambores",
-    description: "Servicio profesional de rectificación de discos y tambores de frenos con equipos de última generación.",
+    description: "Servicio profesional para rectificación de discos y tambores con equipos de última generación.",
     icon: "Wrench"
   },
   {
@@ -38,7 +38,7 @@ export const SERVICES = [
   {
     id: "master",
     title: "Reparación de Master y Bombas",
-    description: "Servicio especializado en mantenimiento y reparación de bombas Y MASTER.",
+    description: "Servicio especializado en mantenimiento y reparación de Caliper, Master y bombas.",
     icon: "Cog"
   }
 ];

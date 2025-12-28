@@ -1,4 +1,5 @@
 import { Wrench, Hammer, ShoppingCart, Cog, Star, MapPin, Phone, MessageCircle } from "lucide-react";
+import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingContactButtons from "@/components/FloatingContactButtons";
@@ -35,6 +36,8 @@ export default function Home() {
     }
   ];
 
+  const [showPreview, setShowPreview] = useState(false);
+
   return (
     <div className="min-h-screen flex flex-col bg-background text-foreground">
       <Header />
@@ -62,21 +65,19 @@ export default function Home() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 {/* <a
-                  href={COMPANY_WHATSAPP}
+                  href="/FISHER_CATALOGO.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:scale-105"
+                  className="flex items-center justify-center gap-2 bg-accent hover:bg-accent/90 text-accent-foreground px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105"
                 >
-                  <MessageCircle size={20} />
-                  Contactar por WhatsApp
+                  Ver Catálogo (PDF)
                 </a> */}
-                {/* <a
-                  href={`tel:${COMPANY_PHONE}`}
-                  className="flex items-center justify-center gap-2 bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:scale-105"
+                <button
+                  onClick={() => setShowPreview(true)}
+                  className="flex items-center justify-center gap-2 bg-accent hover:bg-accent/90 text-accent-foreground px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105"
                 >
-                  <Phone size={20} />
-                  Llamar Ahora
-                </a> */}
+                  Previsualizar Catálogo
+                </button>
               </div>
               <div className="flex items-center gap-2 text-sm pt-4">
                 <Star size={18} className="text-yellow-400" />
@@ -293,6 +294,21 @@ export default function Home() {
 
       <Footer />
       <FloatingContactButtons />
+      {/* PDF preview overlay */}
+      {showPreview && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4">
+          <div className="w-full max-w-5xl h-[80vh] bg-white rounded-lg shadow-lg overflow-hidden">
+            <div className="flex items-center justify-between p-3 border-b border-border">
+              <h3 className="font-semibold">Previsualizar Catálogo</h3>
+              <div className="flex items-center gap-2">
+                <a href="/FISHER_CATALOGO.pdf" target="_blank" rel="noopener noreferrer" className="text-sm px-3 py-1 bg-accent rounded-md">Abrir en pestaña</a>
+                <button onClick={() => setShowPreview(false)} className="text-sm px-3 py-1 bg-muted rounded-md">Cerrar</button>
+              </div>
+            </div>
+            <iframe src="/FISHER_CATALOGO.pdf" title="Catálogo PDF" className="w-full h-full border-0" />
+          </div>
+        </div>
+      )}
     </div>
   );
 }
